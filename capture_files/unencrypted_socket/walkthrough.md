@@ -1,3 +1,8 @@
+As you know the data is being sent within the network, check the endpoints listed by wireshark and apply ip filters from this window, there should be very few endpoints within the network listed. To find the data being sent look at the largest packet sent to this endpoint. To find the source and destination see the source and destination of this packet. 
+
+
+
+
 The packet containing the message is #2622 in the trace
 
 1. Identify the Ip+Port sending the data 

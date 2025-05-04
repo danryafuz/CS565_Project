@@ -1,3 +1,6 @@
+As this is implemented via gRPC you can find the communication in the trace by looking for gRPC headers. To find the data being sent look at the largest packet in this gRPC communication period. To find the source and destination see the source and destination of this packet. 
+
+
 message is contained in packet 2184
 
 1. Identify the Ip+Port sending the data 
