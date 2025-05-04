@@ -1,7 +1,7 @@
 import socket
 from encrypt_helper import encrypt_helper
 
-HOST = '192.168.12.51'
+HOST = '192.168.12.51' # Linux VM IP address
 PORT = 12345
 KEY = b'mysecretaeskey12'
 
