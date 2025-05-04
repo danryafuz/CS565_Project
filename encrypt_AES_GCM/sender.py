@@ -9,13 +9,27 @@ KEY = b'mysecretaeskey12'
 encryptor = encrypt_helper(KEY)
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.connect((HOST, PORT))
+
+with open('data.txt', 'r') as file:
+    lines = file.readlines()
+
 message = encryptor.encrypt("test1")
 sock.sendall(message)
 reply = sock.recv(4096)
 print('Decrypted Reply:', encryptor.decrypt(reply))
-message = encryptor.encrypt("test2")
+
+message = encryptor.encrypt("test1")
 sock.sendall(message)
 reply = sock.recv(4096)
 print('Decrypted Reply:', encryptor.decrypt(reply))
+
+for i in range(0, len(lines), 4):
+    chunk = ''.join(lines[i:i+4])
+    if chunk.strip():
+        encrypted = encryptor.encrypt(chunk)
+        sock.sendall(encrypted)
+
+        reply = sock.recv(4096)
+        print('Decrypted Reply:', encryptor.decrypt(reply))
 
 sock.close()

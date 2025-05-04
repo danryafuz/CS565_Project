@@ -23,6 +23,7 @@ while True:
         print('no package received, disconnecting')
         break
     decrypted_msg = encryptor.decrypt(msg)
+    print(msg)
     print('Decrypted Message:', decrypted_msg)
     response = encryptor.encrypt("received")
     conn.sendall(response)
