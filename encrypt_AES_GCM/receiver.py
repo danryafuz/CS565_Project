@@ -1,7 +1,7 @@
 import socket
 from encrypt_helper import encrypt_helper
 
-HOST = '127.0.0.1'
+HOST = '192.168.12.51'
 PORT = 12345
 KEY = b'mysecretaeskey12'
 
